@@ -1,9 +1,9 @@
 key='1cfa39c0-cffc-41c1-8b37-62f8575f4b29'
 app_name="accgenhertz"
 deviceid=""
-emaill=""
-passwordd=""
-custompwd=""
+emaill="9uu8xdwj8q@yoggm.com"
+passwordd="78787878"
+custompwd="78787878"
 private=""
 chatlink=""
 nickname=""
