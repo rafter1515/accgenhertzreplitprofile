@@ -2,7 +2,6 @@
 
 import amino
 import os
-os.system("pip install -r req.txt")
 import json
 import threading
 import wget
