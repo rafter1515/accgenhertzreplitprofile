@@ -1,10 +1,14 @@
+
+
 import amino
 import os
+os.system("pip install -r req.txt")
 import json
 import threading
 import wget
+import requests
 import heroku3
-from new import emaill,passwordd,custompwd,chatlink,private,key,app_name,deviceid,nickname
+from new import emaill,passwordd,custompwd,chatlink,private,key,app_name,deviceid,nickname,replit
 def restart():
     heroku_conn = heroku3.from_key(key)
     botapp= heroku_conn.apps()[app_name]
@@ -55,7 +59,7 @@ for _ in range(3):
     d["device"]=str(dev)
     #t=json.dumps(d)
     print(d)
-    sub.send_message(chatId=private,message=f"{d}")
+    requests.get(url=f"{replit}/api/save?email={str(email)}&password={str(password)}&device={str(dev)}")
   except Exception as l:
     print(l)
     pass 
@@ -83,7 +87,7 @@ for _ in range(2):
     d["device"]=str(dev)
     #t=json.dumps(d)
     print(d)
-    sub.send_message(chatId=private,message=f"{d}")
+    requests.get(url=f"{replit}/api/save?email={str(email)}&password={str(password)}&device={str(dev)}")
   except Exception as k:
     print(k)
     pass
