@@ -1,5 +1,5 @@
-key='key'
-app_name="app name"
+key='1cfa39c0-cffc-41c1-8b37-62f8575f4b29'
+app_name="accgenhertz"
 deviceid=""
 emaill=""
 passwordd=""
