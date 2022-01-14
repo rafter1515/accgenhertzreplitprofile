@@ -1,6 +1,6 @@
 secmail
 requests
-Amino.fix==2.1.9
+Dick.py==1.3.1
 Click==7.0
 gunicorn==19.9.0
 itsdangerous==1.1.0
@@ -9,4 +9,4 @@ MarkupSafe==1.1.1
 Werkzeug==0.15.6
 wget
 heroku3
-hmac
+
