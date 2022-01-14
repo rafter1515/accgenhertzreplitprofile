@@ -1,6 +1,6 @@
 
 
-import amino
+import aminofix as amino
 import os
 import json
 import threading
