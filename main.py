@@ -1,14 +1,12 @@
 
 
-import aminofix as amino
+import amino
 import os
 import json
 import threading
 import wget
 import requests
 import heroku3
-import hmac
-from hashlib import sha1
 from new import emaill,passwordd,custompwd,chatlink,private,key,app_name,deviceid,nickname,replit
 def restart():
     heroku_conn = heroku3.from_key(key)
@@ -34,11 +32,6 @@ def find():
     if "6"==length:
       break
   return g
-
-def generate_device_Id():
-    identifier = os.urandom(20)
-    return ("32" + identifier.hex() + hmac.new(bytes.fromhex("76b4a156aaccade137b8b1e77b435a81971fbd3e"),
-                                               b"\x32" + identifier, sha1).hexdigest()).upper()
 
 password=custompwd
 de=client.devicee()
@@ -70,7 +63,7 @@ for _ in range(3):
     print(l)
     pass 
 
-de=generate_device_Id()
+de=client.devicee()
 client=amino.Client(de)
 for _ in range(2):
   try: os.remove("code.png")
