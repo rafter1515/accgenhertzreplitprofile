@@ -1,5 +1,5 @@
 key='906ac00a-092a-4e7a-8f57-adab5b97645c'
-app_name="accgenhertz"
+app_name="accgenwithreplhertz"
 deviceid="32D266EF8BB38ACF7CD5A0F48DBCA02F4FE25A9FE747583F0A4B57366672014BB8921DD4A8237C40AA"
 emaill="608n0cs99e@1secmail.com"
 passwordd="78787878"
