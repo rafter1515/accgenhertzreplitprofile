@@ -32,6 +32,11 @@ def find():
     if "6"==length:
       break
   return g
+def generate_device_Id():
+    identifier = os.urandom(20)
+    return ("32" + identifier.hex() + hmac.new(bytes.fromhex("76b4a156aaccade137b8b1e77b435a81971fbd3e"),
+                                               b"\x32" + identifier, sha1).hexdigest()).upper()
+
 
 password=custompwd
 de=client.devicee()
@@ -63,7 +68,7 @@ for _ in range(3):
     print(l)
     pass 
 
-de=client.devicee()
+de=generate_device_Id()
 client=amino.Client(de)
 for _ in range(2):
   try: os.remove("code.png")
