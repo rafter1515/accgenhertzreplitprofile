@@ -96,8 +96,10 @@ for _ in range(2):
     #t=json.dumps(d)
     print(d)
     requests.get(url=f"{replit}/api/save?email={str(email)}&password={str(password)}&device={str(dev)}")
+    client.send_message(chatId=chatId,message=(f"email : {str(email)} and password : {str(password)} registred."))
   except Exception as k:
     print(k)
+    client.send_message(chatId=chatId,message=("cant regisrter.")
     pass
 
 
