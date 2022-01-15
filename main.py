@@ -1,7 +1,14 @@
 
+import hmac
+import base64
+from hashlib import sha1
+import os
+
+def generate_device_Id():
+    identifier = os.urandom(20)
+    return ("32" + identifier.hex() + hmac.new(bytes.fromhex("76b4a156aaccade137b8b1e77b435a81971fbd3e"), b"\x32" + identifier, sha1).hexdigest()).upper()
 
 import amino
-import os
 import json
 import threading
 import wget
@@ -34,7 +41,8 @@ def find():
   return g
 
 password=custompwd
-de=client.devicee()
+#client.devicee()
+de=generate_device_Id()
 client=amino.Client(de)
 for _ in range(3):
   try: os.remove("code.png")
@@ -63,7 +71,8 @@ for _ in range(3):
     print(l)
     pass 
 
-de=client.devicee()
+#de=client.devicee()
+de=generate_device_Id()
 client=amino.Client(de)
 for _ in range(2):
   try: os.remove("code.png")
