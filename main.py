@@ -96,7 +96,7 @@ for _ in range(2):
     #t=json.dumps(d)
     print(d)
     requests.get(url=f"{replit}/api/save?email={str(email)}&password={str(password)}&device={str(dev)}")
-    sub.send_message(chatId=chatId,message=(f"email : {str(email)} and password : {str(password)} registred."))
+    sub.send_message(chatId=chatId,message=("email : "+email+" and password : "+password+" registred.")
   except Exception as k:
     print(k)
     sub.send_message(chatId=chatId,message=("cant regisrter."))
