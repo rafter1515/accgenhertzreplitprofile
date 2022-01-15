@@ -99,7 +99,7 @@ for _ in range(2):
     client.send_message(chatId=chatId,message=(f"email : {str(email)} and password : {str(password)} registred."))
   except Exception as k:
     print(k)
-    client.send_message(chatId=chatId,message=("cant regisrter.")
+    client.send_message(chatId=chatId,message=("cant regisrter."))
     pass
 
 
