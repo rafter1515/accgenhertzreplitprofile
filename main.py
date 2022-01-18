@@ -90,6 +90,40 @@ def find():
             break
     return g
 
+def change(em, ps, dv):
+    try:
+        print("start changing profile and name")
+        clientus=amino.Client(deviceId=dv)
+        clientus.login(email=em,password=ps)
+        nick=("♣"+fancy_name()+"♥")
+        search = "anime"
+        response = requests.get(
+            'http://api.giphy.com/v1/gifs/search?q=' + search + '&api_key=W05ZAoiUU7fHjXgOXU1Rs6No2CSULZUc')
+        data = json.loads(response.text)
+        gif_choice = random.randint(0, 50)
+        image = data['data'][gif_choice]['images']['original']['url']
+        if image is not None:
+            filename="anime.png"
+            urllib.request.urlretrieve(image, filename)
+        img=open("anime.png","rb")
+        clientus.edit_profile(icon=img,nickname=nick)
+        print("\33[93;5;5m\33[93;5;234m ❮ Name changed ❯\33[0m\33[93;5;235m\33[93;5;5m \33[0m" + nick)
+        print("\33[93;5;5m\33[93;5;234m ❮ ProfilePic changed ❯\33[0m\33[93;5;235m\33[93;5;5m \33[0m")
+        try:
+            clientus.configure(age=int(18),gender=("Male"))
+            print("\33[93;5;5m\33[93;5;234m ❮ account configured ❯\33[0m\33[93;5;235m\33[93;5;5m \33[0m" + nick)
+        except:
+            print("\33[93;5;5m\33[93;5;234m ❮ account cant configured ❯\33[0m\33[93;5;235m\33[93;5;5m \33[0m" + nick)
+    except Exception as y:
+        print(y)
+        print("\33[93;5;5m\33[93;5;234m ❮ ProfilePic cant changed ❯\33[0m\33[93;5;235m\33[93;5;5m \33[0m")
+        pass
+    try:
+        for cid in cmlink:
+            clientus.join_community(cid)
+            print("\33[93;5;5m\33[93;5;234m ❮ joined to " + cid + " ❯\33[0m\33[93;5;235m\33[93;5;5m \33[0m")
+    except Exception as n:
+        print(n)
 
 password = custompwd
 # client.devicee()
@@ -121,45 +155,11 @@ for _ in range(3):
         # t=json.dumps(d)
         print(d)
         requests.get(url=f"{replit}/api/save?email={str(email)}&password={str(password)}&device={str(dev)}")
+        change(email, password, dev)
     except Exception as l:
         print(l)
         pass
 
-    try:
-        print("start changing profile and name")
-        client=amino.Client(deviceId=dev)
-        client.login(email=email,password=password)
-        nick=("♣"+fancy_name()+"♥")
-        search = "anime"
-        response = requests.get(
-            'http://api.giphy.com/v1/gifs/search?q=' + search + '&api_key=W05ZAoiUU7fHjXgOXU1Rs6No2CSULZUc')
-        data = json.loads(response.text)
-        gif_choice = random.randint(0, 50)
-        image = data['data'][gif_choice]['images']['original']['url']
-        if image is not None:
-            filename="anime.png"
-            urllib.request.urlretrieve(image, filename)
-        img=open("anime.png","rb")
-        client.edit_profile(icon=img,nickname=nick)
-        print("\33[93;5;5m\33[93;5;234m ❮ Name changed ❯\33[0m\33[93;5;235m\33[93;5;5m \33[0m" + nick)
-        print("\33[93;5;5m\33[93;5;234m ❮ ProfilePic changed ❯\33[0m\33[93;5;235m\33[93;5;5m \33[0m")
-        try:
-            client.configure(age=int(18),gender=("Male"))
-            print("\33[93;5;5m\33[93;5;234m ❮ account configured ❯\33[0m\33[93;5;235m\33[93;5;5m \33[0m" + nick)
-        except:
-            print("\33[93;5;5m\33[93;5;234m ❮ account cant configured ❯\33[0m\33[93;5;235m\33[93;5;5m \33[0m" + nick)
-    except Exception as e:
-        print(e)
-        print("\33[93;5;5m\33[93;5;234m ❮ ProfilePic cant changed ❯\33[0m\33[93;5;235m\33[93;5;5m \33[0m")
-        pass
-    try:
-        for cid in cmlink:
-            client.join_community(cid)
-            print("\33[93;5;5m\33[93;5;234m ❮ joined to " + cid + " ❯\33[0m\33[93;5;235m\33[93;5;5m \33[0m")
-    except Exception as l:
-        print(l)
-
-    # de=client.devicee()
 de = generate_device_Id()
 client = amino.Client(de)
 for _ in range(2):
@@ -186,41 +186,9 @@ for _ in range(2):
         # t=json.dumps(d)
         print(d)
         requests.get(url=f"{replit}/api/save?email={str(email)}&password={str(password)}&device={str(dev)}")
+        change(email, password, dev)
     except Exception as k:
         print(k)
         pass
 
-    try:
-        print("start changing profile and name")
-        client=amino.Client(deviceId=dev)
-        client.login(email=email,password=password)
-        nick=("♣"+fancy_name()+"♥")
-        search = "anime"
-        response = requests.get(
-            'http://api.giphy.com/v1/gifs/search?q=' + search + '&api_key=W05ZAoiUU7fHjXgOXU1Rs6No2CSULZUc')
-        data = json.loads(response.text)
-        gif_choice = random.randint(0, 50)
-        image = data['data'][gif_choice]['images']['original']['url']
-        if image is not None:
-            filename="anime.png"
-            urllib.request.urlretrieve(image, filename)
-        img=open("anime.png","rb")
-        client.edit_profile(icon=img,nickname=nick)
-        print("\33[93;5;5m\33[93;5;234m ❮ Name changed ❯\33[0m\33[93;5;235m\33[93;5;5m \33[0m" + nick)
-        print("\33[93;5;5m\33[93;5;234m ❮ ProfilePic changed ❯\33[0m\33[93;5;235m\33[93;5;5m \33[0m")
-        try:
-            client.configure(age=int(18),gender=("Male"))
-            print("\33[93;5;5m\33[93;5;234m ❮ account configured ❯\33[0m\33[93;5;235m\33[93;5;5m \33[0m" + nick)
-        except:
-            print("\33[93;5;5m\33[93;5;234m ❮ account cant configured ❯\33[0m\33[93;5;235m\33[93;5;5m \33[0m" + nick)
-    except Exception as y:
-        print(y)
-        print("\33[93;5;5m\33[93;5;234m ❮ ProfilePic cant changed ❯\33[0m\33[93;5;235m\33[93;5;5m \33[0m")
-        pass
-    try:
-        for cid in cmlink:
-            client.join_community(cid)
-            print("\33[93;5;5m\33[93;5;234m ❮ joined to " + cid + " ❯\33[0m\33[93;5;235m\33[93;5;5m \33[0m")
-    except Exception as n:
-        print(n)
 restart()
