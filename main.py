@@ -14,7 +14,7 @@ import threading
 import wget
 import requests
 import heroku3
-from new import emaill,passwordd,custompwd,chatlink,private,key,app_name,deviceid,nickname,replit
+from new import emaill,passwordd,custompwd,chatlink,private,key,app_name,deviceid,nickname,replit,replit2
 def restart():
     heroku_conn = heroku3.from_key(key)
     botapp= heroku_conn.apps()[app_name]
